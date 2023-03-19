@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val unitEdit: EditText = findViewById(R.id.unitEditText)
         val radioGroup: RadioGroup = findViewById(R.id.radioGroup)
         val reverseSwitch: Switch = findViewById(R.id.switchButton)
-        val unitResult: TextView = findViewById(R.id.reverseTextView)
+        val unitResult: TextView = findViewById(R.id.unitResultText)
 
         calculateButton.setOnClickListener(View.OnClickListener {
             var changed = 0f
@@ -24,13 +24,13 @@ class MainActivity : AppCompatActivity() {
                 if(rButton != -1) {
                     val radioButton: RadioButton = findViewById<RadioButton>(rButton)
                     val rButtonValue: String = radioButton.text.toString()
-                    if(rButtonValue == "Grams to Cups" && !reverseSwitch.isChecked()) {
+                    if(rButtonValue == "Grams to cups" && !reverseSwitch.isChecked()) {
                         changed = unitEdit.text.toString().toFloat() / 240
-                    } else if (rButtonValue == "Cups to Grams" && reverseSwitch.isChecked()) {
+                    } else if (rButtonValue == "Grams to cups" && reverseSwitch.isChecked()) {
                         changed = unitEdit.text.toString().toFloat() * 240
-                    } else if (rButtonValue == "Mililiters to Ounces" && !reverseSwitch.isChecked()) {
+                    } else if (rButtonValue == " Mililiters to fluid ounces" && !reverseSwitch.isChecked()) {
                         changed = unitEdit.text.toString().toFloat() * 0.33814f
-                    } else if (rButtonValue == "Ounces to Mililiters " && reverseSwitch.isChecked()) {
+                    } else if (rButtonValue == " Mililiters to fluid ounces" && reverseSwitch.isChecked()) {
                         changed = unitEdit.text.toString().toFloat() / 0.033814f
                     }
                 }
