@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val formatTip = NumberFormat.getCurrencyInstance().format(tip);
-        binding.tipAmountTextView.text = getString(R.string.tip_amount, formattedTip);
+        binding.tipAmountTextView.text = getString(R.string.tip_amount, formatTip);
 
     }
 }
